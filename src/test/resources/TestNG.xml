@@ -15,18 +15,3 @@
         </classes>
     </test>
 </suite>
-<suite name="Suite">
-<test name="Smoke">
-    <groups>
-        <define name="Group 1">
-            <include name="smoke"/>
-        </define>
-        <run>
-            <include name="Group 1"/>
-        </run>
-    </groups>
-    <classes>
-        <class name="GroupsTest"/>
-    </classes>
-</test>
-</suite>
