@@ -1,7 +1,6 @@
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
-import static org.testng.Assert.assertThrows;
 
 public class CalcTest {
 
@@ -27,20 +26,27 @@ public class CalcTest {
 
     @Test(expectedExceptions = ArithmeticException.class)
     public void testIntDivisionByZero() {
-        Calculator.div(10, 0);
+        Assert.assertEquals(Calculator.div(10, 0),0);
     }
 
     @Test
     public void testDivisionDoubleByZero() {
-        assertThrows(ArithmeticException.class, () -> {
-            double result = Calculator.div(10.34, 0);
-        });
+        Assert.assertEquals(Calculator.div(10.34, 0.0),Double.POSITIVE_INFINITY);
+        Assert.assertEquals(Calculator.div(-23.4, 0.0),Double.NEGATIVE_INFINITY);
 
     }
+    @Test(testName = "division zero be zero")
+    public void testDivisionZeroByZero(){
+        Assert.assertEquals(Calculator.div(0.0, 0.0),Double.NaN);
+    }
+
     @Test
     public void testDivisionIntZeroInTheNumerator() {
         Assert.assertEquals(Calculator.div(0, 5),0);
     }
+
+
+
 
     @Test()
     public void testDivisionDoubleZeroInTheNumerator() {
