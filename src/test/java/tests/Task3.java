@@ -60,9 +60,9 @@ public class Task3 {
         String value2 = driver.findElement(By.id("ckd_epi_res")).getText();
         String value3 = driver.findElement(By.id("cge_res")).getText();
 
-        Assert.assertEquals(value1,0.39);
-        Assert.assertEquals(value2,0.36);
-        Assert.assertEquals(value3,0.83);
+        Assert.assertEquals(value1,"0.39");
+        Assert.assertEquals(value2,"0.36");
+        Assert.assertEquals(value3,"0.83");
 
 
     }
