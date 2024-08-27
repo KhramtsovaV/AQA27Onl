@@ -19,7 +19,10 @@ public class FileDownloadTest extends BaseTest {
 
         Thread.sleep(5000);
 
-        File downloadedFile = new File("/Users/valeriyakhramtsova/Downloads/fileToUpload.jpg");
+        String pathToDownloadedFile = "Downloads/fileToUpload.jpg";
+        String absolutePathToDownloadedFile = new File(System.getProperty("user.home"), pathToDownloadedFile).getAbsolutePath();
+
+        File downloadedFile = new File(absolutePathToDownloadedFile);
         Assert.assertTrue(downloadedFile.exists(), "Downloaded document is not found");
     }
 }
