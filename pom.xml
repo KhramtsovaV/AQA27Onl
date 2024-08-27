@@ -16,7 +16,7 @@
         <selenium.version>4.22.0</selenium.version>
         <webdrivermanager.version>5.8.0</webdrivermanager.version>
         <suiteFileName>general1.xml</suiteFileName>
-        <allure.version>2.29.0</allure.version>
+        <allure.version>2.28.0</allure.version>
         <aspectj.version>1.9.20.1</aspectj.version>
     </properties>
 
@@ -40,14 +40,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -59,6 +57,7 @@
             <artifactId>allure-testng</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -69,10 +68,10 @@
                 <version>3.1.2</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!--suiteXmlFile>target/test-classes/${suiteFileName}</suiteXmlFile-->
+                        <suiteXmlFle>target/test-classes/${suiteFileName}</suiteXmlFle>
                     </suiteXmlFiles>
                     <argLine>
-                        -javaagent:"/Users/valeriyakhramtsova/.m2/repository/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                 </configuration>
                 <dependencies>

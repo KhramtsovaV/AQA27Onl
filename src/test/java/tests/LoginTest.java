@@ -3,6 +3,7 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -69,8 +70,15 @@ public class LoginTest extends BaseTest {
     @Description("Test the incorrect login functionality without entering any data")
     @Severity(SeverityLevel.MINOR)
     @Test(description = "Login Without Data Test")
-    public void noData() {
+    public void noData() throws InterruptedException {
         Assert.assertTrue(loginStep.incorrectLogin("", "").isPageOpened());
+    }
+
+    @Description("Test for screenshot")
+    @Severity(SeverityLevel.MINOR)
+    @Test
+    public void screenshot() {
+        Assert.assertTrue(loginStep.successfulLogin("", "").isPageOpened());
     }
 }
 

@@ -30,8 +30,4 @@ public class InvokedListener implements IInvokedMethodListener {
             }
         }
     }
-    @Attachment(value = "Page screenshot", type = "image/png")
-    private byte[] saveScreenshot(byte[] screenshot) {
-        return screenshot;
     }
-}
