@@ -3,25 +3,26 @@ package baseEntities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.*;
+import pages.projects.EditProjectPage;
 
 public class BaseStep {
     protected WebDriver driver;
     protected LoginPage loginPage;
-    protected ProductPage productPage;
-    protected CartPage cartPage;
-    protected CheckoutCustomerInformationPage checkoutCustomerInformationPage;
-    protected CheckoutOverviewPage checkoutOverviewPage;
-    protected CheckoutCompletePage checkoutCompletePage;
+    protected TopMenuPage topMenuPage;
+    protected AddTestCasePage addTestCasePage;
+    protected DashboardPage dashboardPage;
+    protected TestCasePage testCasePage;
+    protected EditProjectPage editProjectPage;
+
 
     public BaseStep(WebDriver driver) {
         this.driver = driver;
 
         loginPage = new LoginPage(driver);
-        productPage = new ProductPage(driver);
-        cartPage = new CartPage(driver);
-        checkoutCustomerInformationPage = new CheckoutCustomerInformationPage(driver);
-        checkoutOverviewPage = new CheckoutOverviewPage(driver);
-        checkoutCompletePage = new CheckoutCompletePage(driver);
-
+        topMenuPage = new TopMenuPage(driver);
+        addTestCasePage = new AddTestCasePage(driver);
+        dashboardPage = new DashboardPage(driver);
+        testCasePage = new TestCasePage(driver);
+        editProjectPage = new EditProjectPage(driver);
     }
 }

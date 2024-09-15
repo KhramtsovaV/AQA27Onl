@@ -5,25 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import services.BrowsersService;
-import steps.AddRemoveSteps;
-import steps.LoginSteps;
-import steps.OrderSteps;
+import steps.UserStep;
 
 public class BaseTest {
 
     protected WebDriver driver;
-    protected LoginSteps loginStep;
-    protected AddRemoveSteps addRemoveStep;
-    protected OrderSteps orderSteps;
-
+    protected UserStep userStep;
 
     @BeforeMethod
     public void setUp() {
         driver = new BrowsersService().getDriver();
 
-        loginStep = new LoginSteps(driver);
-        addRemoveStep = new AddRemoveSteps(driver);
-        orderSteps = new OrderSteps(driver);
+        userStep = new UserStep(driver);
 
         driver.get(ReadProperties.getUrl());
     }
