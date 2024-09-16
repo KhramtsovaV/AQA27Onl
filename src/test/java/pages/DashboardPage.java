@@ -4,6 +4,7 @@ import baseEntities.BasePage;
 import elements.Button;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.projects.AddProjectPage;
 
 public class DashboardPage extends BasePage {
     private final static String pagePath = "/index.php?/dashboard";
@@ -49,5 +50,9 @@ public class DashboardPage extends BasePage {
 
     public void clickTestCases() {
         getTestCases().click();
+    }
+    public AddProjectPage clickAddProjectButton() {
+        getEditButton().click();
+        return new AddProjectPage(driver);
     }
 }
